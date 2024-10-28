@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte mais comercial */
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: justify; /* Justificando o texto */
+}
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    width: 120px; /* Largura da logo */
+    height: 120px; /* Altura igual à largura para manter a proporção */
+    border-radius: 50%; /* Tornando a imagem circular */
+    object-fit: cover; /* Para garantir que a imagem se ajuste corretamente */
+}
+
+
+/* Navegação */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff0000;
+}
+
+/* Banner */
+.banner img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Limitar a altura máxima da imagem */
+    object-fit: cover;
+}
+
+/* Descrição */
+.descricao {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.descricao h2, .descricao h3 {
+    color: #cc0909;
+}
+
+/* Destaques */
+.destaques {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.destaque-item {
+    background-color: #fff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.destaque-item:hover {
+    transform: scale(1.05);
+}
+
+.destaque-imagem {
+    width: 100px;
+}
+
+/* Localização */
+.localizacao {
+    text-align: center;
+    margin: 20px;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    margin: 20px;
+}
+
+.cta-button {
+    background-color: #b30707;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-bottom: 20px; /* Aumentando a margem inferior do botão */
+}
+
+.cta-button:hover {
+    background-color: #ff0606;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 30px; /* Adicionando margem superior ao rodapé, se necessário */
+}
+
+/* Redes Sociais */
+.social-media {
+    margin-top: 15px; /* Adicionando espaço entre o texto e as redes sociais */
+}
+
+.social-icon {
+    width: 30px;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        cursor: pointer;
+        display: block;
+    }
+}
+h2, h3 {
+    margin: 20px 0; /* Margem superior e inferior para os títulos */
+}
+
+p {
+    margin: 10px 0; /* Margem superior e inferior para os parágrafos */
+    line-height: 1.6; /* Aumentando o espaçamento entre as linhas */
+}

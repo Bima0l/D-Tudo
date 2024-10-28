@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte mais comercial */
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: justify; /* Justificando o texto */
+}
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    width: 120px; /* Largura da logo */
+    height: 120px; /* Altura igual à largura para manter a proporção */
+    border-radius: 50%; /* Tornando a imagem circular */
+    object-fit: cover; /* Para garantir que a imagem se ajuste corretamente */
+}
+
+/* Navegação */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff0000;
+}
+
+/* Descrição */
+.descricao {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.descricao h2, .descricao h3 {
+    color: #cc0909;
+}
+
+/* Galeria de Produtos */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.produto-item {
+    background-color: #fff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer; /* Indica que é clicável */
+}
+
+.produto-item:hover {
+    transform: scale(1.05);
+}
+
+.produto-item img {
+    max-width: 100%;
+    border-radius: 10px; /* Arredondar bordas das imagens */
+}
+
+/* Modal */
+.modal {
+    display: none; /* Ocultar inicialmente */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilitar rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 30px; /* Margem superior ao rodapé */
+}
+
+/* Redes Sociais */
+.social-media {
+    margin-top: 15px; /* Espaço entre o texto e as redes sociais */
+}
+
+.social-icon {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        cursor: pointer;
+        display: block;
+    }
+}
+
+h2, h3 {
+    margin: 20px 0; /* Margem superior e inferior para os títulos */
+}
+
+p {
+    margin: 10px 0; /* Margem superior e inferior para os parágrafos */
+    line-height: 1.6; /* Aumentando o espaçamento entre as linhas */
+}

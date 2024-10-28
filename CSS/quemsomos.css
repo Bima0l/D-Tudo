@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte mais comercial */
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: justify; /* Justificando o texto */
+}
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    width: 120px; /* Largura da logo */
+    height: 120px; /* Altura igual à largura para manter a proporção */
+    border-radius: 50%; /* Tornando a imagem circular */
+    object-fit: cover; /* Para garantir que a imagem se ajuste corretamente */
+}
+
+/* Navegação */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff0000;
+}
+
+/* Descrição */
+.descricao {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.descricao h2, .descricao h3 {
+    color: #cc0909;
+}
+
+/* Nossa Equipe */
+.equipe {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.equipe-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.membro {
+    margin: 10px;
+    text-align: center;
+}
+
+.foto-membro {
+    width: 100px; /* Ajuste conforme necessário */
+    height: 100px; /* Para manter a proporção */
+    border-radius: 50%; /* Tornar a foto circular */
+    object-fit: cover; /* Ajusta a imagem ao espaço */
+}
+
+/* Linha do Tempo */
+.linha-do-tempo {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.linha-do-tempo ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.linha-do-tempo li {
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 30px; /* Adicionando margem superior ao rodapé, se necessário */
+}
+
+/* Redes Sociais */
+.redes-sociais {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto dentro da seção */
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.social-item {
+    margin: 20px; /* Espaço entre os itens */
+}
+
+.social-icon {
+    width: 80px; /* Tamanho das imagens na seção de redes sociais */
+    height: 80px; /* Mantendo a proporção */
+    margin-bottom: 10px; /* Espaço entre a imagem e a descrição */
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 30px; /* Adicionando margem superior ao rodapé */
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center; /* Centraliza as imagens do rodapé */
+    margin-top: 10px; /* Espaço superior */
+}
+
+footer .social-icon {
+    width: 30px; /* Tamanho das imagens no rodapé */
+    height: 30px; /* Mantendo a proporção */
+    margin: 0 15px; /* Margem entre as imagens */
+}
+
+
+h2, h3 {
+    margin: 20px 0; /* Margem superior e inferior para os títulos */
+}
+
+p {
+    margin: 10px 0; /* Margem superior e inferior para os parágrafos */
+    line-height: 1.6; /* Aumentando o espaçamento entre as linhas */
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        cursor: pointer;
+        display: block;
+    }
+}
+.redes-sociais h2 {
+    text-align: left; /* Alinha o título à esquerda */
+}
