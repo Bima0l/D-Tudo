@@ -1,3 +1,6 @@
+/* styles.css */
+
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -27,11 +30,11 @@ header {
     object-fit: cover; /* Para garantir que a imagem se ajuste corretamente */
 }
 
-
 /* Navegação */
 .navbar {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .navbar ul {
@@ -52,6 +55,33 @@ header {
 
 .navbar a:hover {
     color: #ff0000;
+}
+
+.menu-toggle {
+    display: none; /* Esconder menu hambúrguer por padrão */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #333; /* Cor das barras */
+    transition: transform 0.3s ease; /* Adiciona transição ao clicar */
+}
+
+/* Ativação do menu hambúrguer */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0; /* Esconde a barra do meio */
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Banner */
@@ -121,12 +151,13 @@ header {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
     margin-bottom: 20px; /* Aumentando a margem inferior do botão */
 }
 
 .cta-button:hover {
     background-color: #ff0606;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
 }
 
 /* Footer */
@@ -136,7 +167,10 @@ footer {
     padding: 20px;
     text-align: center;
     line-height: 1.5;
-    margin-top: 30px; /* Adicionando margem superior ao rodapé, se necessário */
+    margin-top: 30px; /* Adicionando margem superior ao rodapé */
+    bottom: 0;
+    width: 100%;/* Adicionando margem superior ao rodapé */
+    border-top: 1px solid #444; /* Linha acima do footer */
 }
 
 /* Redes Sociais */
@@ -149,10 +183,11 @@ footer {
     margin: 0 10px;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     .navbar ul {
-        display: none;
-        flex-direction: column;
+        display: none; /* Ocultar lista de navegação em dispositivos móveis */
+        flex-direction: column; /* Mudar para coluna */
         background-color: #000;
         position: absolute;
         top: 60px;
@@ -160,15 +195,28 @@ footer {
         width: 100%;
     }
 
-    .navbar ul.active {
-        display: flex;
+    .navbar.active ul {
+        display: flex; /* Exibir lista quando ativa */
     }
 
     .menu-toggle {
-        cursor: pointer;
-        display: block;
+        display: block; /* Mostrar menu hambúrguer em dispositivos móveis */
+    }
+
+    .descricao {
+        margin: 10px; /* Menos margem em dispositivos menores */
+    }
+
+    h2, h3 {
+        font-size: 1.5em; /* Reduzir tamanho da fonte em telas menores */
+    }
+
+    p {
+        font-size: 0.9em; /* Ajuste do tamanho da fonte dos parágrafos */
     }
 }
+
+/* Estilos Gerais para Títulos e Parágrafos */
 h2, h3 {
     margin: 20px 0; /* Margem superior e inferior para os títulos */
 }
@@ -176,4 +224,8 @@ h2, h3 {
 p {
     margin: 10px 0; /* Margem superior e inferior para os parágrafos */
     line-height: 1.6; /* Aumentando o espaçamento entre as linhas */
+}
+
+.navbar a:focus {
+    outline: 2px solid #ff0000; /* Destaque quando o link está em foco */
 }
