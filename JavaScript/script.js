@@ -1,8 +1,9 @@
 // script.js
 
-const mobileMenu = document.getElementById('mobile-menu');
-const navbar = document.querySelector('.navbar');
+const toggleButton = document.getElementById('toggleButton');
+const navbarNav = document.getElementById('navbarNav');
 
-mobileMenu.addEventListener('click', () => {
-    navbar.classList.toggle('active');
+// Abre e fecha o menu ao clicar no botão de hambúrguer
+toggleButton.addEventListener('click', () => {
+    navbarNav.classList.toggle('active'); // Alterna a classe "active" para mostrar ou esconder o menu
 });

@@ -29,13 +29,17 @@ header {
 
 /* Navegação */
 .navbar {
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
+    flex-direction: row; /* Padrão em telas grandes */
+}
+
+.navbar ul.open {
+    display: flex; /* Quando ativado */
 }
 
 .navbar li {
@@ -118,7 +122,9 @@ footer {
     padding: 20px;
     text-align: center;
     line-height: 1.5;
-    margin-top: 30px; /* Adicionando margem superior ao rodapé, se necessário */
+    margin-top: 30px; 
+    bottom: 0;
+    width: 100%; 
 }
 
 /* Redes Sociais */
@@ -183,8 +189,8 @@ p {
 
 @media (max-width: 768px) {
     .navbar ul {
-        display: none;
-        flex-direction: column;
+        display: none; /* Ocultar a lista por padrão */
+        flex-direction: column; /* Mudar para coluna */
         background-color: #000;
         position: absolute;
         top: 60px;
@@ -192,13 +198,12 @@ p {
         width: 100%;
     }
 
-    .navbar ul.active {
-        display: flex;
+    .navbar.active ul {
+        display: flex; /* Mostrar a lista quando ativa */
     }
 
     .menu-toggle {
-        cursor: pointer;
-        display: block;
+        display: block; /* Mostrar botão de menu em dispositivos móveis */
     }
 }
 .redes-sociais h2 {

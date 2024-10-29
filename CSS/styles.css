@@ -46,6 +46,9 @@ header {
     margin: 0 15px;
 }
 
+.navbar ul.open {
+    display: flex; /* Exibir a lista quando ativa */
+}
 .navbar a {
     color: #fff;
     text-decoration: none;

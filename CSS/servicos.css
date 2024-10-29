@@ -29,14 +29,19 @@ header {
 
 /* Navegação */
 .navbar {
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
+    flex-direction: row; /* Padrão em telas grandes */
 }
+
+.navbar ul.open {
+    display: flex; /* Quando ativado */
+}
+
 
 .navbar li {
     margin: 0 15px;
@@ -185,8 +190,8 @@ footer {
 
 @media (max-width: 768px) {
     .navbar ul {
-        display: none;
-        flex-direction: column;
+        display: none; /* Ocultar a lista por padrão */
+        flex-direction: column; /* Mudar para coluna */
         background-color: #000;
         position: absolute;
         top: 60px;
@@ -194,13 +199,12 @@ footer {
         width: 100%;
     }
 
-    .navbar ul.active {
-        display: flex;
+    .navbar.active ul {
+        display: flex; /* Mostrar a lista quando ativa */
     }
 
     .menu-toggle {
-        cursor: pointer;
-        display: block;
+        display: block; /* Mostrar botão de menu em dispositivos móveis */
     }
 }
 

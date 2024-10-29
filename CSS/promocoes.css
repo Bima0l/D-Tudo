@@ -10,7 +10,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    background: #fff; /* Fundo branco */
+    background: #f0f0f0;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     display: flex;
@@ -18,7 +18,7 @@ body {
 }
 
 header {
-    background-color: #000; /* Cabeçalho preto */
+    background-color: #000;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -76,27 +76,23 @@ header {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
     width: calc(48% - 20px);
 }
 
 .produto-item:hover {
     transform: scale(1.05);
+    background-color: #f8f8f8; /* Leve mudança de cor ao passar o mouse */
 }
 
 .produto-item img {
-    width: 200px; /* Aumentado para melhorar a visibilidade */
+    width: 180px;
     height: auto;
-}
-
-.produto-item p {
-    text-align: justify; /* Justificar texto */
 }
 
 .contatos {
     display: flex;
-    flex-direction: column; /* Para empilhar verticalmente */
-    align-items: center;
+    justify-content: space-around;
     margin: 20px 0;
 }
 
@@ -105,56 +101,65 @@ header {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Largura ajustada */
+    width: 45%;
     text-align: center;
-    margin: 10px 0; /* Espaçamento entre os itens */
 }
 
 .contato-icon {
-    width: 100px; /* Aumentado para as imagens do contato */
+    width: 80px;
     height: auto;
     margin-bottom: 10px;
 }
 
-.whatsapp-link {
+.whatsapp-link, .instagram-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #25d366; /* Verde do WhatsApp */
-    color: white;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.3s;
 }
 
+.whatsapp-link {
+    background-color: #25d366;
+    color: white;
+}
+
 .whatsapp-link:hover {
-    background-color: #1da951; /* Cor ao passar o mouse */
+    background-color: #1da951;
     transform: scale(1.05);
 }
 
 .instagram-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #c32aa3; /* Cor do Instagram */
+    background-color: #c32aa3;
     color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
 .instagram-link:hover {
-    background-color: #9b007f; /* Cor ao passar o mouse */
+    background-color: #9b007f;
     transform: scale(1.05);
 }
 
+.descricao h2 {
+    color: #cc0909;
+}
+
+h2, h3 {
+    margin: 20px 0;
+}
+
+p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
 footer {
-    background-color: #000; /* Rodapé preto */
+    background-color: #000;
     color: #fff;
     padding: 20px;
     text-align: center;
     line-height: 1.5;
     margin-top: 30px;
     border-top: 1px solid #444;
-    
 }
 
 .social-media {
@@ -178,3 +183,12 @@ footer {
         width: 100%;
     }
 }
+
+        .caixa-texto {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
