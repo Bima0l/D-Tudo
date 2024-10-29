@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/produtos.css">
+    <script src="../JavaScript/produtos.js"></script>
+    <title>Produtos - D'Tudo</title>
+</head>
+<body>
+    <header>
+        <img src="../images/Logo.png" alt="Logo da Empresa" class="logo-img">
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Ínicio</a></li>
+                <li><a href="./quem-somos.html">Quem Somos</a></li>
+                <li><a href="./servicos.html">Serviços</a></li>
+                <li><a href="./produtos.html">Produtos</a></li>
+                <li><a href="./promocoes.html">Promoções</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="descricao">
+            <h2>Nossos Produtos</h2>
+            <p>A D'Tudo oferece uma variedade de produtos para atender suas necessidades.</p>
+        </section>
+
+        <section class="galeria">
+            <div class="produto-item" onclick="openModal('Moda Feminina', 'Descrição da Moda Feminina', '../images/moda-feminina.jpg')">
+                <img src="../images/feminino.png" alt="Moda Feminina">
+                <h3>Moda Feminina</h3>
+                <p>Variedade de roupas e acessórios da moda feminina.</p>
+            </div>
+            <div class="produto-item" onclick="openModal('Beleza', 'Descrição de Beleza', '../images/beleza.jpg')">
+                <img src="../images/beleza.jpeg" alt="Beleza">
+                <h3>Beleza</h3>
+                <p>Produtos de beleza para realçar sua beleza natural.</p>
+            </div>
+            <div class="produto-item" onclick="openModal('Produtos Domésticos', 'Descrição de Produtos Domésticos', '../images/domesticos.jpg')">
+                <img src="../images/produtinhos.jpg" alt="Produtos Domésticos">
+                <h3>Produtos Domésticos</h3>
+                <p>Itens de todas as variedades.</p>
+            </div>
+            <div class="produto-item" onclick="openModal('Eletrônicos', 'Descrição de Eletrônicos', '../images/eletronicos.jpg')">
+                <img src="../images/ti.jpg" alt="Eletrônicos">
+                <h3>Eletrônicos</h3>
+                <p>Os melhores eletrônicos a preços acessíveis.</p>
+            </div>
+            <div class="produto-item" onclick="openModal('Moda Masculina', 'Descrição da Moda Masculina', '../images/moda-masculina.jpg')">
+                <img src="../images/masculino.jpg" alt="Moda Masculina">
+                <h3>Moda Masculina</h3>
+                <p>Roupas e acessórios para o homem moderno.</p>
+            </div>
+            <div class="produto-item" onclick="openModal('Casa e Decoração', 'Descrição de Casa e Decoração', '../images/casa-decoracao.jpg')">
+                <img src="../images/casa.jpg" alt="Casa e Decoração">
+                <h3>Casa e Decoração</h3>
+                <p>Produtos para deixar sua casa ainda mais bonita.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="">
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    <section class="instagram-section">
+        <h2>Nos Siga no Instagram!</h2>
+        <p>Fique por dentro das nossas novidades e lançamentos diários. Conheça produtos novos e acompanhe nossas postagens em <strong>@dd.tudo</strong>.</p>
+        <a href="https://www.instagram.com/dd.tudo" target="_blank" class="instagram-link">Visite nosso Instagram</a>
+    </section>
+    
+    <footer>
+        <div class="footer-info">
+            <p>Telefone: (34) 9663-7583</p>
+            <p>Email: fabiooliveiramachado@hotmail.com</p>
+            <p>Endereço: Bairro: Rio de Janeiro, Avenida Maura Chesca da Cruz, 297, Uberaba-MG</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/dd.tudo" target="_blank" aria-label="Instagram">
+                <img src="../icons/insta.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://chat.whatsapp.com/DaMJsMsVSuZ4hR5pr6QrYg" target="_blank" aria-label="WhatsApp">
+                <img src="../icons/whatsapp.png" alt="WhatsApp" class="social-icon">
+            </a>
+            <a href="https://www.facebook.com/DTudocompraevenda" target="_blank" aria-label="Facebook">
+                <img src="../icons/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+        </div>
+        <p>&copy; 2024 D'Tudo. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../JavaScript/script.js"></script>
+</body>
+</html>
