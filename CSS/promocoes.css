@@ -192,3 +192,25 @@ footer {
             margin: 20px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+        @media (max-width: 768px) {
+            .contatos {
+                flex-direction: column; /* Muda a direção para coluna em telas menores */
+                align-items: center; /* Centraliza os itens */
+            }
+        
+            .contato-item {
+                width: 100%; /* Faz os itens ocuparem toda a largura */
+                text-align: center; /* Centraliza o texto */
+                margin-bottom: 20px; /* Adiciona espaço entre os itens */
+            }
+        
+            .contato-texto {
+                flex-direction: column; /* Muda a direção para coluna para os textos */
+            }
+        
+            .whatsapp-link, .instagram-link {
+                margin-left: 0; /* Remove a margem em telas pequenas */
+                margin-top: 5px; /* Adiciona um espaço entre o título e o botão */
+            }
+        }
+        
