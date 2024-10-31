@@ -9,4 +9,3 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
     emailInput.value = ''; // Limpa o campo de entrada
 });
 
-

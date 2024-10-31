@@ -70,12 +70,10 @@ header {
     color: #cc0909;
 }
 
-/* Galeria de Produtos */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Três colunas */
-    gap: 10px; /* Espaço menor entre os itens */
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
+    gap: 10px; /* Espaço entre os itens */
 }
 
 .produto-item {
@@ -156,7 +154,15 @@ footer {
     width: 30px;
     margin: 0 10px;
 }
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
 
+    .cta-button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+}
 /* Responsividade */
 @media (max-width: 768px) {
     .navbar ul {
@@ -183,7 +189,7 @@ footer {
     }
 
     .produto-item img {
-        height: 150px; /* Altura menor em telas menores */
+        height: auto; /* Altura menor em telas menores */
     }
 }
 
@@ -217,4 +223,8 @@ p {
 
 .instagram-link:hover {
     background-color: #ff0000; /* Cor ao passar o mouse */
+}
+img {
+    max-width: 100%; /* Para que as imagens não excedam a largura do container */
+    height: auto; /* Para manter a proporção */
 }

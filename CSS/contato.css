@@ -160,10 +160,51 @@ footer {
     width: 30px;
     margin: 0 10px;
 }
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
 
+    .cta-button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+}
 /* Responsividade */
 @media (max-width: 768px) {
     main {
         padding: 15px;
     }
+    .navbar ul {
+        display: none; /* Oculta o menu */
+        flex-direction: column; /* Exibe em coluna */
+    }
+
+    .navbar ul.active {
+        display: flex; /* Exibe o menu quando ativo */
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    }
+
+    .produto-item img {
+        height: auto; /* Mantém proporção */
+    }
+
+}
+
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
+    gap: 10px; /* Espaço entre os itens */
+}
+
+.produto-item {
+    padding: 10px;
+}
+
+img {
+    max-width: 100%; /* Para que as imagens não excedam a largura do container */
+    height: auto; /* Para manter a proporção */
 }

@@ -187,7 +187,15 @@ footer {
     width: 30px;
     margin: 0 10px; /* Espaço entre as imagens das redes sociais */
 }
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
 
+    .cta-button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+}
 @media (max-width: 768px) {
     .navbar ul {
         display: none; /* Ocultar a lista por padrão */
@@ -205,6 +213,13 @@ footer {
 
     .menu-toggle {
         display: block; /* Mostrar botão de menu em dispositivos móveis */
+    }
+    .galeria {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    }
+
+    .produto-item img {
+        height: auto; /* Mantém proporção */
     }
 }
 
@@ -233,4 +248,17 @@ p {
 .cta-button:hover {
     background-color: #ff0606; /* Vermelho claro */
     transform: scale(1.05); /* Aumenta levemente o botão ao passar o mouse */
+}
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
+    gap: 10px; /* Espaço entre os itens */
+}
+
+.produto-item {
+    padding: 10px;
+}
+img {
+    max-width: 100%; /* Para que as imagens não excedam a largura do container */
+    height: auto; /* Para manter a proporção */
 }

@@ -63,11 +63,12 @@ header {
 }
 
 .galeria {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
     gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .produto-item {
@@ -192,7 +193,24 @@ footer {
             margin: 20px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+        @media (max-width: 480px) {
+            .galeria {
+                grid-template-columns: 1fr; /* Uma coluna */
+            }
+        
+            .cta-button {
+                width: 100%; /* Botão ocupa toda a largura */
+            }
+        }
         @media (max-width: 768px) {
+            .navbar ul {
+                display: none; /* Oculta o menu */
+                flex-direction: column; /* Exibe em coluna */
+            }
+        
+            .navbar ul.active {
+                display: flex; /* Exibe o menu quando ativo */
+            }
             .contatos {
                 flex-direction: column; /* Muda a direção para coluna em telas menores */
                 align-items: center; /* Centraliza os itens */
@@ -212,5 +230,18 @@ footer {
                 margin-left: 0; /* Remove a margem em telas pequenas */
                 margin-top: 5px; /* Adiciona um espaço entre o título e o botão */
             }
+            .galeria {
+                grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+            }
+        
+            .produto-item img {
+                height: auto; /* Mantém proporção */
+            }
+        }
+    
+       
+        img {
+            max-width: 100%; /* Para que as imagens não excedam a largura do container */
+            height: auto; /* Para manter a proporção */
         }
         

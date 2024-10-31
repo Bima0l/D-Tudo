@@ -7,3 +7,6 @@ const navbarNav = document.getElementById('navbarNav');
 toggleButton.addEventListener('click', () => {
     navbarNav.classList.toggle('active'); // Alterna a classe "active" para mostrar ou esconder o menu
 });
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.navbar ul').classList.toggle('active');
+});

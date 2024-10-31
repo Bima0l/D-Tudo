@@ -186,7 +186,15 @@ p {
     margin: 10px 0; /* Margem superior e inferior para os parágrafos */
     line-height: 1.6; /* Aumentando o espaçamento entre as linhas */
 }
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
 
+    .cta-button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+}
 @media (max-width: 768px) {
     .navbar ul {
         display: none; /* Ocultar a lista por padrão */
@@ -205,7 +213,27 @@ p {
     .menu-toggle {
         display: block; /* Mostrar botão de menu em dispositivos móveis */
     }
+    .galeria {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    }
+
+    .produto-item img {
+        height: auto; /* Mantém proporção */
+    }
 }
 .redes-sociais h2 {
     text-align: left; /* Alinha o título à esquerda */
+}
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
+    gap: 10px; /* Espaço entre os itens */
+}
+
+.produto-item {
+    padding: 10px;
+}
+img {
+    max-width: 100%; /* Para que as imagens não excedam a largura do container */
+    height: auto; /* Para manter a proporção */
 }
