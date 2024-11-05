@@ -1,6 +1,4 @@
-/* styles.css */
-
-/* Reset básico */
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
@@ -8,10 +6,10 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Fonte mais comercial */
+    font-family: 'Roboto', sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    text-align: justify; /* Justificando o texto */
+    text-align: justify;
 }
 
 /* Header */
@@ -23,18 +21,37 @@ header {
     align-items: center;
 }
 
+/* Logo */
 .logo-img {
-    width: 120px; /* Largura da logo */
-    height: 120px; /* Altura igual à largura para manter a proporção */
-    border-radius: 50%; /* Tornando a imagem circular */
-    object-fit: cover; /* Para garantir que a imagem se ajuste corretamente */
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Navegação */
 .navbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+}
+
+.menu-toggle {
+    display: none; /* Esconder por padrão */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+#navbarNav {
+    display: flex; /* Menu normal em telas grandes */
 }
 
 .navbar ul {
@@ -46,9 +63,6 @@ header {
     margin: 0 15px;
 }
 
-.navbar ul.open {
-    display: flex; /* Exibir a lista quando ativa */
-}
 .navbar a {
     color: #fff;
     text-decoration: none;
@@ -60,38 +74,11 @@ header {
     color: #ff0000;
 }
 
-.menu-toggle {
-    display: none; /* Esconder menu hambúrguer por padrão */
-    cursor: pointer;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-    background-color: #333; /* Cor das barras */
-    transition: transform 0.3s ease; /* Adiciona transição ao clicar */
-}
-
-/* Ativação do menu hambúrguer */
-.menu-toggle.active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-    opacity: 0; /* Esconde a barra do meio */
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
 /* Banner */
 .banner img {
     width: 100%;
     height: auto;
-    max-height: 200px; /* Limitar a altura máxima da imagem */
+    max-height: 200px;
     object-fit: cover;
 }
 
@@ -155,12 +142,12 @@ header {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s, box-shadow 0.3s;
-    margin-bottom: 20px; /* Aumentando a margem inferior do botão */
+    margin-bottom: 20px;
 }
 
 .cta-button:hover {
     background-color: #ff0606;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
@@ -170,15 +157,15 @@ footer {
     padding: 20px;
     text-align: center;
     line-height: 1.5;
-    margin-top: 30px; /* Adicionando margem superior ao rodapé */
+    margin-top: 30px;
     bottom: 0;
-    width: 100%;/* Adicionando margem superior ao rodapé */
-    border-top: 1px solid #444; /* Linha acima do footer */
+    width: 100%;
+    border-top: 1px solid #444;
 }
 
 /* Redes Sociais */
 .social-media {
-    margin-top: 15px; /* Adicionando espaço entre o texto e as redes sociais */
+    margin-top: 15px;
 }
 
 .social-icon {
@@ -186,78 +173,105 @@ footer {
     margin: 0 10px;
 }
 
-/* Media Queries */
-@media (max-width: 480px) {
-    .galeria {
-        grid-template-columns: 1fr; /* Uma coluna */
-    }
-
-    .cta-button {
-        width: 100%; /* Botão ocupa toda a largura */
-    }
-}
-@media (max-width: 768px) {
-    .navbar ul {
-        display: none; /* Ocultar lista de navegação em dispositivos móveis */
-        flex-direction: column; /* Mudar para coluna */
-        background-color: #000;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-    }
-
-    .navbar.active ul {
-        display: flex; /* Exibir lista quando ativa */
-    }
-
-    .menu-toggle {
-        display: block; /* Mostrar menu hambúrguer em dispositivos móveis */
-    }
-
-    .descricao {
-        margin: 10px; /* Menos margem em dispositivos menores */
-    }
-    .galeria {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-    }
-
-    .produto-item img {
-        height: auto; /* Mantém proporção */
-    }
-
-    h2, h3 {
-        font-size: 1.5em; /* Reduzir tamanho da fonte em telas menores */
-    }
-
-    p {
-        font-size: 0.9em; /* Ajuste do tamanho da fonte dos parágrafos */
-    }
-}
-
 /* Estilos Gerais para Títulos e Parágrafos */
 h2, h3 {
-    margin: 20px 0; /* Margem superior e inferior para os títulos */
+    margin: 20px 0;
 }
 
 p {
-    margin: 10px 0; /* Margem superior e inferior para os parágrafos */
-    line-height: 1.6; /* Aumentando o espaçamento entre as linhas */
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
+/* Acessibilidade */
 .navbar a:focus {
-    outline: 2px solid #ff0000; /* Destaque quando o link está em foco */
+    outline: 2px solid #ff0000;
 }
+
+/* Galeria */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
-    gap: 10px; /* Espaço entre os itens */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
 }
 
 .produto-item {
     padding: 10px;
 }
+
 img {
-    max-width: 100%; /* Para que as imagens não excedam a largura do container */
-    height: auto; /* Para manter a proporção */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    #navbarNav {
+        display: none; /* Esconder o menu normal */
+        flex-direction: column; /* Colocar os itens em coluna */
+        position: absolute; /* Posicionar sobre o conteúdo */
+        top: 60px; /* Ajustar conforme a altura do header */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Fundo do menu */
+        z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
+        padding: 10px 0; /* Adicionar algum espaço */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o botão hamburger */
+    }
+
+    /* Mostrar o menu quando a classe 'open' é adicionada ao navbar */
+    .navbar.open #navbarNav {
+        display: flex; /* Mostrar o menu */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        width: 80px; /* Reduz a logo em telas menores */
+        height: 80px;
+    }
+
+    h2, h3 {
+        font-size: 1.2em; /* Títulos menores em telas pequenas */
+    }
+
+    p {
+        font-size: 0.9em; /* Texto menor em telas pequenas */
+    }
+}
+
+.menu-toggle .close {
+    display: none; /* Ocultar o X por padrão */
+    font-size: 24px; /* Tamanho do X */
+    color: white; /* Cor do X */
+    margin-top: 4px; /* Margem para alinhamento */
+}
+
+/* Mostrar o X quando o menu estiver aberto */
+.navbar.open .close {
+    display: block; /* Mostrar o X */
+}
+
+/* Opção de esconder a barra do menu quando o X é clicado */
+.navbar.open .bar {
+    display: none; /* Ocultar as barras do menu quando o X é exibido */
+}
+.footer-info a {
+    color: white; /* Define a cor dos links como branca */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+}
+.social-media a {
+    color: black; /* Define a cor dos links como preta */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
 }

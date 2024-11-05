@@ -10,26 +10,25 @@
     <header>
         <img src="../images/Logo.png" alt="Logo da Empresa" class="logo-img">
         <nav class="navbar">
-            <div class="menu-toggle">☰</div>
-            <ul>
-                <li><a href="../index.html">Ínicio</a></li>
-                <li><a href="./quem-somos.html">Quem Somos</a></li>
-                <li><a href="./servicos.html">Serviços</a></li>
-                <li><a href="./produtos.html">Produtos</a></li>
-                <li><a href="./pedidos.html">Promoções</a></li>
-                <li><a href="./contato.html">Contato</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
+            <div class="menu-toggle" id="toggleButton" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+            <ul id="navbarNav">
+                <li><a href="../index.html">Ínicio</a></li>
+                <li><a href="./quem-somos.html">Quem Somos</a></li>
+                <li><a href="./servicos.html">Serviços</a></li>
+                <li><a href="./produtos.html">Produtos</a></li>
+                <li><a href="./promocoes.html">Promoções</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <section class="descricao">
-            <h2>Quem Somos:</h2>
+            <h2>Quem Somos</h2>
             <p>A D'Tudo nasceu por meio de um sonho de montar uma loja onde as pessoas pudessem encontrar tudo o que precisam. Com a missão de ajudar nossos clientes a encontrar o que desejam, buscamos oferecer produtos e serviços de qualidade para atender a todas as necessidades do dia a dia.</p>
         </section>
 
@@ -69,9 +68,15 @@
 
     <footer>
         <div class="footer-info">
-            <p>Telefone: (34) 9 9663-7583</p>
-            <p>Email: fabiooliveiramachado@hotmail.com</p>
-            <p>Endereço: Bairro: Rio de Janeiro, Avenida Maura Chesca da Cruz, 297, Uberaba-MG</p>
+            <p>
+                Telefone: <a href="tel:+55349996637583">(34) 9 9663-7583</a>
+            </p>
+            <p>
+                Email: <a href="mailto:comerciodedtudo@gmail.com">comerciodedtudo@gmail.com</a>
+            </p>
+            <p>
+                Endereço: <a href="https://www.google.com/maps/search/?api=1&query=Rio+de+Janeiro,+Avenida+Maura+Chesca+da+Cruz,+297,+Uberaba-MG" target="_blank">Bairro: Rio de Janeiro, Avenida Maura Chesca da Cruz, 297, Uberaba-MG</a>
+            </p>
         </div>
         <p></p>
         <div class="social-media">
@@ -87,6 +92,6 @@
         </div>
         <p>&copy; 2024 D'Tudo. Todos os direitos reservados.</p>
     </footer>
-    <script src="../JavaScript/"></script>
+    <script src="../JavaScript/script.js"></script>
 </body>
 </html>

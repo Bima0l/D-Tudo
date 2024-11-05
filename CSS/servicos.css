@@ -1,14 +1,16 @@
+/* Reset de estilo global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo geral do corpo */
 body {
-    font-family: 'Roboto', sans-serif; /* Fonte mais comercial */
+    font-family: 'Roboto', sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    text-align: justify; /* Justificando o texto */
+    text-align: justify;
 }
 
 /* Header */
@@ -20,28 +22,39 @@ header {
     align-items: center;
 }
 
+/* Logo */
 .logo-img {
-    width: 120px; /* Largura da logo */
-    height: 120px; /* Altura igual à largura para manter a proporção */
-    border-radius: 50%; /* Tornando a imagem circular */
-    object-fit: cover; /* Para garantir que a imagem se ajuste corretamente */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Navegação */
-.navbar {
-    position: relative;
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Navbar */
 .navbar ul {
     list-style: none;
     display: flex;
-    flex-direction: row; /* Padrão em telas grandes */
+    flex-direction: row;
 }
 
 .navbar ul.open {
-    display: flex; /* Quando ativado */
+    display: flex;
 }
-
 
 .navbar li {
     margin: 0 15px;
@@ -58,55 +71,120 @@ header {
     color: #ff0000;
 }
 
-/* Descrição */
-.descricao {
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Media Queries para a responsividade */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar.active ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #navbarNav {
+        display: none; /* Esconder o menu normal */
+        flex-direction: column; /* Colocar os itens em coluna */
+        position: absolute; /* Posicionar sobre o conteúdo */
+        top: 60px; /* Ajustar conforme a altura do header */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Fundo do menu */
+        z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
+        padding: 10px 0; /* Adicionar algum espaço */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o botão hamburger */
+    }
+
+    /* Mostrar o menu quando a classe 'open' é adicionada ao navbar */
+    .navbar.open #navbarNav {
+        display: flex; /* Mostrar o menu */
+    }
+
 }
 
-.descricao h2 {
+/* Efeito de Transição do Menu */
+.navbar.active .menu-toggle .bar {
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.navbar.active .menu-toggle .bar:nth-child(1) {
+    transform: rotate(45deg);
+    margin-top: 8px;
+}
+
+.navbar.active .menu-toggle .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar.active .menu-toggle .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    margin-top: -8px;
+}
+
+/* Centralização de Containers e Cards */
+.container {
+    width: 100%;
+    max-width: 1200px;  /* Limita a largura do conteúdo */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px;
+}
+
+/* Descrição */
+.descricao,
+.servicos {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.descricao h2,
+.servicos h2 {
     color: #cc0909;
 }
 
-/* CSS para a seção de serviços */
-.servicos {
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Serviço Cards */
 .servicos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cria um layout de grade responsivo */
-    gap: 20px; /* Espaçamento entre os itens da grade */
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .servico-card {
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centraliza o texto dentro do card */
+    text-align: center;
 }
 
 .servico-img {
-    width: 100%; /* Ajusta a imagem para ocupar toda a largura disponível */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 10px; /* Arredondando os cantos da imagem */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
-
-.accordion {
-    margin-top: 20px;
-}
-
+/* Accordion */
 .accordion-item {
     margin-bottom: 10px;
 }
@@ -121,50 +199,32 @@ header {
     border-radius: 5px;
 }
 
-.arrow {
-    transition: transform 0.3s;
-}
-
-.accordion-header.active .arrow {
-    transform: rotate(180deg); /* Para rotacionar a seta */
-}
 .accordion-body {
-    display: none; /* Esconder conteúdo por padrão */
+    display: none;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-top: 5px;
 }
 
-.accordion-body img {
-    max-width: 100%; /* Ajusta a imagem ao tamanho do contêiner */
-    height: auto;
-}
-
+/* WhatsApp link */
 .whatsapp-link {
     display: inline-block;
-    margin-top: 20px;
-    background-color: #25D366; /* Cor do WhatsApp */
+    background-color: #25D366;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .whatsapp-link:hover {
-    background-color: #128C7E; /* Cor de hover */
+    background-color: #128C7E;
 }
 
+/* Títulos */
 h2, h3 {
-    margin: 20px 0; /* Margem superior e inferior para os títulos */
-}
-
-.panel {
-    display: none; /* Oculta o painel inicialmente */
-    padding: 0 15px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    margin-top: 10px;
+    margin: 20px 0;
 }
 
 /* Footer */
@@ -174,91 +234,73 @@ footer {
     padding: 20px;
     text-align: center;
     line-height: 1.5;
-    margin-top: 30px; /* Adicionando margem superior ao rodapé */
-    bottom: 0;
-    width: 100%;
+    margin-top: 30px;
 }
 
+/* Redes sociais no footer */
 .social-media {
-    margin-top: 15px; /* Adicionando espaço entre o texto e as redes sociais */
+    margin-top: 15px;
 }
 
 .social-icon {
     width: 30px;
-    margin: 0 10px; /* Espaço entre as imagens das redes sociais */
-}
-@media (max-width: 480px) {
-    .galeria {
-        grid-template-columns: 1fr; /* Uma coluna */
-    }
-
-    .cta-button {
-        width: 100%; /* Botão ocupa toda a largura */
-    }
-}
-@media (max-width: 768px) {
-    .navbar ul {
-        display: none; /* Ocultar a lista por padrão */
-        flex-direction: column; /* Mudar para coluna */
-        background-color: #000;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-    }
-
-    .navbar.active ul {
-        display: flex; /* Mostrar a lista quando ativa */
-    }
-
-    .menu-toggle {
-        display: block; /* Mostrar botão de menu em dispositivos móveis */
-    }
-    .galeria {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-    }
-
-    .produto-item img {
-        height: auto; /* Mantém proporção */
-    }
+    margin: 0 10px;
 }
 
+.social-media a {
+    color: black;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Outros ajustes de estilo */
 p {
-    margin: 10px 0; /* Margem superior e inferior para os parágrafos */
-    line-height: 1.6; /* Aumentando o espaçamento entre as linhas */
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
-.cta {
-    text-align: center;
-    margin: 20px;
-}
-
+/* Botões de CTA */
 .cta-button {
-    background-color: #b30707; /* Vermelho escuro */
+    background-color: #b30707;
     color: #fff;
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
-    text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s; /* Adicionando transição para transformação */
-    margin-bottom: 20px; /* Aumentando a margem inferior do botão */
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 20px;
 }
 
 .cta-button:hover {
-    background-color: #ff0606; /* Vermelho claro */
-    transform: scale(1.05); /* Aumenta levemente o botão ao passar o mouse */
+    background-color: #ff0606;
+    transform: scale(1.05);
 }
+
+/* Galeria */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
-    gap: 10px; /* Espaço entre os itens */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
 }
 
 .produto-item {
     padding: 10px;
 }
+
 img {
-    max-width: 100%; /* Para que as imagens não excedam a largura do container */
-    height: auto; /* Para manter a proporção */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Links do footer */
+.footer-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
 }

@@ -12,6 +12,7 @@ body {
 }
 
 /* Header */
+/* Header */
 header {
     background-color: #000;
     padding: 20px;
@@ -20,26 +21,38 @@ header {
     align-items: center;
 }
 
+/* Logo */
 .logo-img {
-    width: 120px; /* Largura da logo */
-    height: 120px; /* Altura igual à largura para manter a proporção */
-    border-radius: 50%; /* Tornando a imagem circular */
-    object-fit: cover; /* Para garantir que a imagem se ajuste corretamente */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Navegação */
-.navbar {
-    position: relative;
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Navbar */
 .navbar ul {
     list-style: none;
     display: flex;
-    flex-direction: row; /* Padrão em telas grandes */
+    flex-direction: row;
 }
 
 .navbar ul.open {
-    display: flex; /* Quando ativado */
+    display: flex;
 }
 
 .navbar li {
@@ -152,6 +165,14 @@ footer {
     height: 80px; /* Mantendo a proporção */
     margin-bottom: 10px; /* Espaço entre a imagem e a descrição */
 }
+.social-media a {
+    color: black; /* Define a cor dos links como preta */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+}
 
 /* Footer */
 footer {
@@ -196,6 +217,26 @@ p {
     }
 }
 @media (max-width: 768px) {
+    #navbarNav {
+        display: none; /* Esconder o menu normal */
+        flex-direction: column; /* Colocar os itens em coluna */
+        position: absolute; /* Posicionar sobre o conteúdo */
+        top: 60px; /* Ajustar conforme a altura do header */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Fundo do menu */
+        z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
+        padding: 10px 0; /* Adicionar algum espaço */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o botão hamburger */
+    }
+
+    /* Mostrar o menu quando a classe 'open' é adicionada ao navbar */
+    .navbar.open #navbarNav {
+        display: flex; /* Mostrar o menu */
+    }
     .navbar ul {
         display: none; /* Ocultar a lista por padrão */
         flex-direction: column; /* Mudar para coluna */
@@ -220,6 +261,26 @@ p {
     .produto-item img {
         height: auto; /* Mantém proporção */
     }
+    #navbarNav {
+        display: none; /* Esconder o menu normal */
+        flex-direction: column; /* Colocar os itens em coluna */
+        position: absolute; /* Posicionar sobre o conteúdo */
+        top: 60px; /* Ajustar conforme a altura do header */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Fundo do menu */
+        z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
+        padding: 10px 0; /* Adicionar algum espaço */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o botão hamburger */
+    }
+
+    /* Mostrar o menu quando a classe 'open' é adicionada ao navbar */
+    .navbar.open #navbarNav {
+        display: flex; /* Mostrar o menu */
+    }
 }
 .redes-sociais h2 {
     text-align: left; /* Alinha o título à esquerda */
@@ -236,4 +297,12 @@ p {
 img {
     max-width: 100%; /* Para que as imagens não excedam a largura do container */
     height: auto; /* Para manter a proporção */
+}
+.footer-info a {
+    color: white; /* Define a cor dos links como branca */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
 }

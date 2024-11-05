@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-
+/* Header */
 header {
     background-color: #000;
     padding: 20px;
@@ -25,19 +25,37 @@ header {
     align-items: center;
 }
 
+/* Logo */
 .logo-img {
     width: 120px;
-    height: auto;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.navbar {
-    display: flex;
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Navbar */
 .navbar ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar ul.open {
     display: flex;
 }
 
@@ -52,33 +70,37 @@ header {
     transition: color 0.3s;
 }
 
-.navbar a:hover,
-.navbar a.active {
+.navbar a:hover {
     color: #ff0000;
 }
 
 .descricao {
     padding: 20px;
+    background-color: #fff;
     margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.descricao h2, .descricao h3 {
+    color: #cc0909;
 }
 
 .galeria {
-    display: grid;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: flex; /* Altera para flex */
+    justify-content: space-between; /* Distribui o espaço igualmente */
     padding: 20px;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .produto-item {
     background-color: #fff;
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, background-color 0.3s;
-    width: calc(48% - 20px);
+    width: 48%; /* Cada coluna ocupa quase 50% da largura */
+    margin: 10px 0; /* Adiciona margem vertical entre os itens */
 }
 
 .produto-item:hover {
@@ -151,6 +173,7 @@ h2, h3 {
 p {
     margin: 10px 0;
     line-height: 1.6;
+   
 }
 
 footer {
@@ -171,77 +194,68 @@ footer {
     width: 30px;
     margin: 0 10px;
 }
+.social-media a {
+    color: black; /* Define a cor dos links como preta */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
+    #navbarNav {
+        display: none; /* Esconder o menu normal */
+        flex-direction: column; /* Colocar os itens em coluna */
+        position: absolute; /* Posicionar sobre o conteúdo */
+        top: 60px; /* Ajustar conforme a altura do header */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Fundo do menu */
+        z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
+        padding: 10px 0; /* Adicionar algum espaço */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o botão hamburger */
+    }
+
+    /* Mostrar o menu quando a classe 'open' é adicionada ao navbar */
+    .navbar.open #navbarNav {
+        display: flex; /* Mostrar o menu */
+    }
+    .galeria {
+        flex-direction: column; /* Uma coluna em telas menores */
+    }
+
     .produto-item {
-        width: calc(45% - 20px);
+        width: 100%; /* Colunas ocupam 100% da largura */
     }
 }
 
 @media (max-width: 480px) {
+    .galeria {
+        flex-direction: column; /* Uma coluna em telas muito pequenas */
+    }
+
     .produto-item {
-        width: 100%;
+        width: 100%; /* Colunas ocupam 100% da largura */
     }
 }
 
-        .caixa-texto {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        @media (max-width: 480px) {
-            .galeria {
-                grid-template-columns: 1fr; /* Uma coluna */
-            }
-        
-            .cta-button {
-                width: 100%; /* Botão ocupa toda a largura */
-            }
-        }
-        @media (max-width: 768px) {
-            .navbar ul {
-                display: none; /* Oculta o menu */
-                flex-direction: column; /* Exibe em coluna */
-            }
-        
-            .navbar ul.active {
-                display: flex; /* Exibe o menu quando ativo */
-            }
-            .contatos {
-                flex-direction: column; /* Muda a direção para coluna em telas menores */
-                align-items: center; /* Centraliza os itens */
-            }
-        
-            .contato-item {
-                width: 100%; /* Faz os itens ocuparem toda a largura */
-                text-align: center; /* Centraliza o texto */
-                margin-bottom: 20px; /* Adiciona espaço entre os itens */
-            }
-        
-            .contato-texto {
-                flex-direction: column; /* Muda a direção para coluna para os textos */
-            }
-        
-            .whatsapp-link, .instagram-link {
-                margin-left: 0; /* Remove a margem em telas pequenas */
-                margin-top: 5px; /* Adiciona um espaço entre o título e o botão */
-            }
-            .galeria {
-                grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-            }
-        
-            .produto-item img {
-                height: auto; /* Mantém proporção */
-            }
-        }
-    
-       
-        img {
-            max-width: 100%; /* Para que as imagens não excedam a largura do container */
-            height: auto; /* Para manter a proporção */
-        }
-        
+
+img {
+    max-width: 100%; /* Para que as imagens não excedam a largura do container */
+    height: auto; /* Para manter a proporção */
+}
+.footer-info a {
+    color: white; /* Define a cor dos links como branca */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+}
+
+

@@ -15,6 +15,7 @@ body {
     min-height: 100vh; /* Garantir que o body ocupe a altura total da tela */
 }
 
+
 /* Header */
 header {
     background-color: #000;
@@ -24,21 +25,37 @@ header {
     align-items: center;
 }
 
+/* Logo */
 .logo-img {
-    width: 120px; 
-    height: 120px; 
-    border-radius: 50%; 
-    object-fit: cover; 
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Navegação */
-.navbar {
-    display: flex;
-    justify-content: flex-end;
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Navbar */
 .navbar ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar ul.open {
     display: flex;
 }
 
@@ -70,6 +87,7 @@ header {
     color: #cc0909;
 }
 
+/* Galeria */
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
@@ -117,6 +135,13 @@ header {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    text-align: center;
+}
+
+.modal-imagem {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .close {
@@ -124,6 +149,7 @@ header {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
@@ -132,6 +158,62 @@ header {
     text-decoration: none;
     cursor: pointer;
 }
+/* Estilos básicos para o modal */
+#modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+#modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modal-title {
+    font-size: 1.5em;
+}
+
+#close-btn {
+    cursor: pointer;
+}
+
+#modal-description {
+    margin-top: 20px;
+}
+
+.category {
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.category:hover {
+    background-color: #e0e0e0;
+}
+
 
 /* Footer */
 footer {
@@ -141,8 +223,6 @@ footer {
     text-align: center;
     line-height: 1.5;
     margin-top: 30px; /* Adicionando margem superior ao rodapé */
-    bottom: 0;
-    width: 100%;
 }
 
 /* Redes Sociais */
@@ -154,15 +234,15 @@ footer {
     width: 30px;
     margin: 0 10px;
 }
-@media (max-width: 480px) {
-    .galeria {
-        grid-template-columns: 1fr; /* Uma coluna */
-    }
-
-    .cta-button {
-        width: 100%; /* Botão ocupa toda a largura */
-    }
+.social-media a {
+    color: black; /* Define a cor dos links como preta */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
 }
+
+.social-media a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .navbar ul {
@@ -173,15 +253,41 @@ footer {
         top: 60px;
         right: 0;
         width: 100%;
+        padding: 10px 0;
     }
 
-    .navbar ul.active {
+    .navbar.active ul {
         display: flex;
     }
 
     .menu-toggle {
-        cursor: pointer;
         display: block;
+    }
+
+    .logo-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #navbarNav {
+        display: none; /* Esconder o menu normal */
+        flex-direction: column; /* Colocar os itens em coluna */
+        position: absolute; /* Posicionar sobre o conteúdo */
+        top: 60px; /* Ajustar conforme a altura do header */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Fundo do menu */
+        z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
+        padding: 10px 0; /* Adicionar algum espaço */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o botão hamburger */
+    }
+
+    /* Mostrar o menu quando a classe 'open' é adicionada ao navbar */
+    .navbar.open #navbarNav {
+        display: flex; /* Mostrar o menu */
     }
 
     .galeria {
@@ -193,6 +299,16 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+
+    .cta-button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+}
+
 h2, h3 {
     margin: 20px 0;
 }
@@ -201,6 +317,7 @@ p {
     margin: 10px 0;
     line-height: 1.6;
 }
+
 .instagram-section {
     background-color: #fff;
     padding: 20px;
@@ -224,7 +341,16 @@ p {
 .instagram-link:hover {
     background-color: #ff0000; /* Cor ao passar o mouse */
 }
+
 img {
     max-width: 100%; /* Para que as imagens não excedam a largura do container */
     height: auto; /* Para manter a proporção */
+}
+.footer-info a {
+    color: white; /* Define a cor dos links como branca */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
 }

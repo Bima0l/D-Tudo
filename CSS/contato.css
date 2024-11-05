@@ -10,11 +10,13 @@ body {
     background-color: #f0f0f0;
     color: #333;
     text-align: justify;
+   
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Garantir que o body ocupe a altura total da tela */
 }
 
+/* Header */
 /* Header */
 header {
     background-color: #000;
@@ -24,21 +26,37 @@ header {
     align-items: center;
 }
 
+/* Logo */
 .logo-img {
-    width: 120px; 
-    height: 120px; 
-    border-radius: 50%; 
-    object-fit: cover; 
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Navegação */
-.navbar {
-    display: flex;
-    justify-content: flex-end;
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Navbar */
 .navbar ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar ul.open {
     display: flex;
 }
 
@@ -56,6 +74,7 @@ header {
 .navbar a:hover {
     color: #ff0000;
 }
+
 
 /* Descrição */
 .descricao {
@@ -115,7 +134,13 @@ textarea {
 
 /* Informações de Contato */
 .informacoes-contato {
-    margin: 20px 0;
+    margin: 20px ; /* Margem auto para centralizar */
+    padding: 20px; /* Adicionando padding interno */
+    background-color: #fff; /* Fundo branco para destacar as seções */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para um efeito de profundidade */
+    max-width: 600px; /* Limitar a largura máxima */
+    
 }
 
 /* Mapa */
@@ -131,7 +156,7 @@ textarea {
 .redes-sociais a {
     display: inline-block;
     margin-right: 15px;
-    color: #007bff;
+    color: #ff0000;
     text-decoration: none;
 }
 
@@ -154,12 +179,22 @@ footer {
 /* Redes Sociais */
 .social-media {
     margin-top: 15px;
+    text-align: center;
 }
 
 .social-icon {
     width: 30px;
     margin: 0 10px;
 }
+.social-media a {
+    color: black; /* Define a cor dos links como preta */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+}
+
 @media (max-width: 480px) {
     .galeria {
         grid-template-columns: 1fr; /* Uma coluna */
@@ -171,6 +206,26 @@ footer {
 }
 /* Responsividade */
 @media (max-width: 768px) {
+    #navbarNav {
+        display: none; /* Esconder o menu normal */
+        flex-direction: column; /* Colocar os itens em coluna */
+        position: absolute; /* Posicionar sobre o conteúdo */
+        top: 60px; /* Ajustar conforme a altura do header */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Fundo do menu */
+        z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
+        padding: 10px 0; /* Adicionar algum espaço */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o botão hamburger */
+    }
+
+    /* Mostrar o menu quando a classe 'open' é adicionada ao navbar */
+    .navbar.open #navbarNav {
+        display: flex; /* Mostrar o menu */
+    }
     main {
         padding: 15px;
     }
@@ -193,7 +248,15 @@ footer {
 
 }
 
+/* Estilos Gerais para Títulos e Parágrafos */
+h2, h3 {
+    margin: 20px 0;
+}
 
+p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
@@ -207,4 +270,40 @@ footer {
 img {
     max-width: 100%; /* Para que as imagens não excedam a largura do container */
     height: auto; /* Para manter a proporção */
+}
+.footer-info a {
+    color: white; /* Define a cor dos links como branca */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+}
+.informacoes-contato a {
+    color: #cc0909; /* Cor vermelha */
+    text-decoration: none; /* Remove o sublinhado */
+   
+}
+
+.informacoes-contato a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.mapa,
+.redes-sociais {
+    margin: 20px auto; /* Margem superior e inferior, auto nas laterais para centralizar */
+    padding: 20px; /* Adicionando padding interno */
+    max-width: 600px; /* Limitar a largura máxima */
+    text-align: center; /* Centraliza o texto dentro da seção */
+   
+}
+
+.redes-sociais a {
+    color: #cc0909; /* Cor vermelha */
+    text-decoration: none; /* Remove o sublinhado */
+   
+}
+
+.redes-sociais a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
