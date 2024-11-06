@@ -123,8 +123,11 @@ header {
 
 /* Localização */
 .localizacao {
-    text-align: center;
-    margin: 20px;
+    margin: 20px auto; /* Margem superior e inferior, auto nas laterais para centralizar */
+    padding: 20px; /* Adicionando padding interno */
+    max-width: 600px; /* Limitar a largura máxima */
+    text-align: center; /* Centraliza o texto dentro da seção */
+   
 }
 
 /* CTA */
@@ -274,4 +277,12 @@ img {
 
 .social-media a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+}
+.destaques a {
+    color: black; /* Define a cor dos links como preta */
+    text-decoration: none; /* Remove o sublinhado dos links, se desejar */
+}
+
+.destaques a:hover {
+    text-decoration: none; /* Adiciona sublinhado ao passar o mouse, se desejar */
 }
