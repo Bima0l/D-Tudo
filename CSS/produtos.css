@@ -136,6 +136,7 @@ header {
     border: 1px solid #888;
     width: 80%;
     text-align: center;
+    border-radius: 10px;
 }
 
 .modal-imagem {
@@ -158,6 +159,7 @@ header {
     text-decoration: none;
     cursor: pointer;
 }
+
 /* Estilos básicos para o modal */
 #modal {
     display: none; /* Inicialmente oculto */
@@ -180,6 +182,7 @@ header {
     border-radius: 10px;
     width: 80%;
     max-width: 600px;
+    overflow-y: auto; /* Adiciona rolagem no caso de descrição longa */
 }
 
 .modal-header {
@@ -198,8 +201,10 @@ header {
 
 #modal-description {
     margin-top: 20px;
+    text-align: left; /* Deixar o texto da descrição alinhado à esquerda */
 }
 
+/* Categoria */
 .category {
     cursor: pointer;
     padding: 10px;
@@ -307,6 +312,17 @@ footer {
     .cta-button {
         width: 100%; /* Botão ocupa toda a largura */
     }
+
+    /* Ajustes no modal para telas pequenas */
+    #modal-content {
+        width: 90%; /* Modal ocupar 90% da largura da tela */
+        max-width: none; /* Remove a largura máxima, permitindo que o modal ocupe mais espaço */
+        padding: 15px; /* Menos preenchimento */
+    }
+
+    #modal-description {
+        font-size: 0.9em; /* Menor tamanho de fonte para dispositivos móveis */
+    }
 }
 
 h2, h3 {
@@ -346,6 +362,7 @@ img {
     max-width: 100%; /* Para que as imagens não excedam a largura do container */
     height: auto; /* Para manter a proporção */
 }
+
 .footer-info a {
     color: white; /* Define a cor dos links como branca */
     text-decoration: none; /* Remove o sublinhado dos links, se desejar */
